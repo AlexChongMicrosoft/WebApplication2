@@ -11,7 +11,7 @@ variables:
 
 
 pool:
-  name: vs2017-win2016
+  name: Azure Pipelines
 steps:
 - task: Npm@1
   displayName: 'npm install'
