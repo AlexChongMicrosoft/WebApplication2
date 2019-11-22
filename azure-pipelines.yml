@@ -13,19 +13,6 @@ variables:
 pool:
   name: AlexselfhostedagentPool
 steps:
-- task: Npm@1
-  displayName: 'npm install'
-  inputs:
-    verbose: false
-  enabled: false
-
-- task: Npm@1
-  displayName: 'npm custom'
-  inputs:
-    command: custom
-    workingDir: TestNPM
-    verbose: false
-    customCommand: run
 
 - script: |
    echo 1
