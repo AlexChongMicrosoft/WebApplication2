@@ -8,7 +8,7 @@ trigger: none
 pr: none
 
 variables:
-  POOL_NAME: Azure Pipeline
+  POOL_NAME: Azure Pipelines
 
 schedules:
 - cron: "09 10 * * *"
