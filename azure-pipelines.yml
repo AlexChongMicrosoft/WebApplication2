@@ -8,10 +8,10 @@ trigger: none
 pr: none
 
 variables:
-  POOL_NAME: AlexselfhostedagentPool
+  POOL_NAME: Azure Pipelines
 
 schedules:
-- cron: "07 10 * * *"
+- cron: "09 10 * * *"
   displayName: Daily build
   branches:
     include:
