@@ -11,7 +11,7 @@ variables:
   POOL_NAME: Alexselfhostedagentpool
 
 schedules:
-- cron: "09 10 * * *"
+- cron: "25 10 * * *"
   displayName: Daily build
   branches:
     include:
