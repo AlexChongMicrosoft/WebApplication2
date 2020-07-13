@@ -1,24 +1,72 @@
-#Test pr
+# Maven
 
-trigger:
-- master
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+# YAML+GUI
+# 29 30 31 31 32 35 3636 38 3939 11
 
-pr:
-- master
-
-resources:
-- repo: self
+trigger: none
+pr: none
 
 variables:
-  tag: '$(Build.BuildId)'
+  POOL_NAME: AlexselfhostedagentPool
 
+schedules:
+- cron: "15 6 * * *"
+  displayName: Daily build
+  branches:
+    include:
+    - master
+  always: true
 
-pool:
-  name: Azure pipeline
-steps:
+stages:
+- stage: BuildStage
+  displayName: BuildStage
 
-- script: |
-   echo 1
-   
-  displayName: 'Command Line Script echo1'
+  pool:
+    name: $(POOL_NAME)
+
+  jobs:
+  - job: Build
+    displayName: BuildJob
+
+    steps:
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Write your PowerShell commands here.
+          
+          Write-Host "Hello Build"
+
+    # - task: DotNetCoreCLI@2
+    #   inputs:
+    #     command: 'restore'
+    #     projects: '''**/*.csproj'
+    #     feedsToUse: 'select'
+
+    - task: UseDotNet@2
+      inputs:
+        packageType: 'sdk'
+        version: '3.1.301'
+
+- stage: Deployment
+  displayName: DeploymentStage
+
+  pool:
+    name: $(POOL_NAME)        
+    
+  jobs:
+  - job: Deploy
+    displayName: DeployJob
+
+    steps:
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Write your PowerShell commands here.
+          
+          Write-Host "Hello Deploy" 
 
