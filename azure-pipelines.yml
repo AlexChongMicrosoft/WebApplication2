@@ -8,7 +8,7 @@ trigger: none
 pr: none
 
 variables:
-  POOL_NAME: Hosted Agents
+  POOL_NAME: Alexselfhostedagentpool
 
 schedules:
 - cron: "09 10 * * *"
