@@ -23,7 +23,7 @@ stages:
   displayName: BuildStage
 
   pool:
-    name: $(POOL_NAME)
+    vmImage: 'windows-latest'
 
   jobs:
   - job: Build
