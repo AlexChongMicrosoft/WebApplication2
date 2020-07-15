@@ -2,7 +2,7 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 # YAML+GUI
-# 29 30 31 31 32 35 3636 38 3939 11
+# 29 30 31 31 32 35 3636 38 3939 11 comment
 
 trigger: none
 pr: none
